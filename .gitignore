@@ -1,0 +1,7 @@
+node_modules
+.dev.vars
+.wrangler
+*.log
+.env
+.env.local
+.secrets_configured
