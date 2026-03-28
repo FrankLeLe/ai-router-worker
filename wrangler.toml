@@ -1,0 +1,20 @@
+name = "ai-router-worker"
+main = "src/index.ts"
+compatibility_date = "2025-07-18"
+compatibility_flags = ["nodejs_compat"]
+
+# 生产环境配置
+[env.production]
+name = "ai-router-worker"
+routes = [
+  { pattern = "ai-router.meteor.workers.dev", custom_domain = true }
+]
+
+# 本地开发环境变量
+[vars]
+ALLOWED_ORIGINS = "*"
+GMI_API_BASE = "https://api.gmi-serving.com/v1"
+
+# Secrets（通过 wrangler secret put 配置）
+# - GMI_API_KEY: GMI Cloud API Key
+# - JWT_SECRET: JWT 认证密钥
